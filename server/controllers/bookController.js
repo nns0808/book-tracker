@@ -42,7 +42,7 @@ export const getBooks = async (req, res) => {
   const count = await Book.countDocuments(filter);
 
   const books = await Book.find(filter)
-    .sort({ createdAt: -1, _id: -1 })
+    .sort({ [sortField]: sortDirection, _id: -1 })
     .limit(limit)
     .skip(limit * (page - 1));
 

@@ -17,7 +17,7 @@ function Header({ title }) {
         <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}>
           About
         </NavLink>
-        {/* <button onClick={logout}>Logout</button> */} 
+        
         <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
       </nav>
     </header>

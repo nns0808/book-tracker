@@ -4,6 +4,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
+import helmet from "helmet";
+import xss from "xss-clean";
+import mongoSanitize from "express-mongo-sanitize";
+
 import authRoutes from "./routes/authRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
 import errorHandler from "./middleware/errorMiddleware.js";
@@ -12,11 +16,15 @@ import errorHandler from "./middleware/errorMiddleware.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
 
 //  Middleware
 app.use(cors());
 app.use(express.json()); 
+
+// Security middleware
+app.use(helmet());
+app.use(xss());
+app.use(mongoSanitize());
 
 // Routes 
 app.use("/api/users", authRoutes);
