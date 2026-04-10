@@ -23,8 +23,8 @@ app.use(express.json());
 
 // Security middleware
 app.use(helmet());
-app.use(xss());
-app.use(mongoSanitize());
+// app.use(xss());
+// app.use(mongoSanitize());
 
 // Routes 
 app.use("/api/users", authRoutes);
