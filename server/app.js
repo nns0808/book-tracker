@@ -2,7 +2,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+// import cors from "cors";import cors from "cors";
 import cors from "cors";
+
+
 
 import helmet from "helmet";
 import xss from "xss-clean";
@@ -18,7 +21,11 @@ dotenv.config();
 const app = express();
 
 //  Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "https://book-tracker-client.onrender.com",
+  credentials: true
+}));
 app.use(express.json()); 
 
 // Security middleware
