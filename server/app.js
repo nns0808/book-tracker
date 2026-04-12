@@ -20,12 +20,15 @@ dotenv.config();
 
 const app = express();
 
+
 //  Middleware
 // app.use(cors());
 app.use(cors({
   origin: "https://book-tracker-client.onrender.com",
   credentials: true
 }));
+app.options("*", cors());
+
 app.use(express.json()); 
 
 // Security middleware
