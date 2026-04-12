@@ -8,7 +8,7 @@ import cors from "cors";
 
 
 import helmet from "helmet";
-import xss from "xss-clean";
+// import xss from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
 
 import authRoutes from "./routes/authRoutes.js";
