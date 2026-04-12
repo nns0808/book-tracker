@@ -27,7 +27,7 @@ app.use(cors({
   origin: "https://book-tracker-client.onrender.com",
   credentials: true
 }));
-app.options("*", cors());
+
 
 app.use(express.json()); 
 
